@@ -1,0 +1,12 @@
+/* Estilo do cursor */
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  transition: transform 0.1s ease;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Certifique-se de que o cursor esteja no topo */
+}
