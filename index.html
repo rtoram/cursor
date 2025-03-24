@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursor Dinâmico</title>
+  <style>
+    /* Estilo do cursor */
+    .cursor {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #000;
+      border-radius: 50%;
+      position: absolute;
+      pointer-events: none;
+      transition: transform 0.1s ease;
+      transform: translate(-50%, -50%);
+      z-index: 9999; /* Certifique-se de que o cursor esteja no topo */
+    }
+  </style>
+</head>
+<body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Cria o elemento do cursor
+      const cursor = document.createElement('div');
+      cursor.classList.add('cursor');
+      document.body.appendChild(cursor);
+
+      // Atualiza a posição do cursor
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+      });
+    });
+  </script>
+</body>
+</html>
